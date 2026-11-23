@@ -6,7 +6,27 @@
 
 Ambag is a mobile expense-splitting application developed using Flutter and Dart. It helps users organize shared expenses, calculate individual contributions, and manage group payments conveniently.
 
-The application aims to simplify expense management and promote transparency among friends and groups sharing expenses.
+The application aims to provide a centralized mobile application that helps users organize shared expenses, calculate individual contributions, and keep track of payments more conveniently.
+
+## Application Screenshots / Demo Video:
+(link)
+
+## Developed by:
+
+Chelsie Gonzales
+Abigail De Sagun
+
+Course/Section: Application Development - CS3101
+Institution: Batangas State University – The National Engineering University
+
+## Objectives of the Application
+1. Provide an organized way to create and manage shared expenses.
+2. Automate the calculation of each participant's share.
+3. Allow users to divide expenses equally or according to the items they purchased.
+4. Help users monitor payment statuses and outstanding balances.
+5. Provide a convenient way to manage friends and participants.
+6. Reduce errors and confusion when handling group expenses.
+
 
 ## Features
 
@@ -69,12 +89,6 @@ Ambag/
 ├── pubspec.lock
 └── README.md
 ```
-
-## Development Team
-
-De Sagun, Abigail
-
-Gonzales, Chelsie
 
 ## Project Status
 
