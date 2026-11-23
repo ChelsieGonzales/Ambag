@@ -72,7 +72,8 @@ Ambag/
 
 ## Development Team
 
-Add the names of the developers who contributed to the project.
+De Sagun, Abigail
+Gonzales, Chelsie
 
 ## Project Status
 
