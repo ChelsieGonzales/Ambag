@@ -9,7 +9,7 @@ Ambag is a mobile expense-splitting application developed using Flutter and Dart
 The application aims to provide a centralized mobile application that helps users organize shared expenses, calculate individual contributions, and keep track of payments more conveniently.
 
 ## Application Screenshots / Demo Video:
-(link)
+https://drive.google.com/drive/folders/1VOwUqm1w6MFs5lZxr0n7PkEJYfAVzfqp 
 
 ## Developed by:
 
