@@ -14,9 +14,11 @@ https://drive.google.com/drive/folders/1VOwUqm1w6MFs5lZxr0n7PkEJYfAVzfqp
 ## Developed by:
 
 Chelsie Gonzales
+
 Abigail De Sagun
 
 Course/Section: Application Development - CS3101
+
 Institution: Batangas State University – The National Engineering University
 
 ## Objectives of the Application
