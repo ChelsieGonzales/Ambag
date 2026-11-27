@@ -3,10 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'models.dart';
 
-/// Everything is stored per user:
-///   users/{uid}/friends/{friendId}  -> { name }
-///   users/{uid}/splits/{splitId}    -> { title, total, date, type, paidBy,
-///                                        shares, paid, items, days }
 class DataService {
   DataService._();
 
@@ -43,8 +39,6 @@ class DataService {
       _friends.doc(id).update({'name': name});
 
   // ---------- PAYMENT ACCOUNTS ----------
-  /// users/{uid}/payments/{id} -> { method, bankName, accountName,
-  ///                                accountNumber, createdAt }
   static CollectionReference<Map<String, dynamic>> get _payments =>
       _userDoc.collection('payments');
 
@@ -65,7 +59,7 @@ class DataService {
 
   static Future<void> deletePayment(String id) => _payments.doc(id).delete();
 
-  /// Removes everything this user stored (used by "Delete account").
+  /// Delete Account
   static Future<void> deleteAllData() async {
     for (final col in [_friends, _splits, _payments]) {
       final snap = await col.get();
@@ -88,7 +82,6 @@ class DataService {
         .map((snap) => snap.docs.map(SplitRecord.fromDoc).toList());
   }
 
-  /// Creates a new split, or overwrites it when [r.id] is set (edit).
   static Future<void> saveSplit(SplitRecord r) async {
     if (r.id == null) {
       await _splits.add(r.toMap());
