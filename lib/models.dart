@@ -16,12 +16,11 @@ class Friend {
   const Friend(this.id, this.name);
 }
 
-/// One place a friend can send money to (GCash, Maya, a bank...).
-/// A user can save as many as they like.
+/// (GCash, Maya, a bank...).
 class PaymentAccount {
   final String id;
-  final String method; // 'GCash' | 'Maya' | 'Bank'
-  final String bankName; // only for Bank
+  final String method; 
+  final String bankName;
   final String accountName;
   final String accountNumber;
   final DateTime created;
@@ -35,7 +34,6 @@ class PaymentAccount {
     required this.created,
   });
 
-  /// What to show on the pill: the bank's name for bank accounts.
   String get label =>
       method == 'Bank' && bankName.isNotEmpty ? bankName : method;
 
@@ -60,7 +58,6 @@ class PaymentAccount {
   }
 }
 
-/// One line item in an item-based split.
 class SplitItem {
   String name;
   double price;
@@ -80,22 +77,18 @@ class SplitItem {
   );
 }
 
-/// One saved split.
 class SplitRecord {
-  final String? id; // null until saved
+  final String? id;
   final String title;
   final double total;
   final DateTime date;
   final SplitType type;
   final String paidBy; // who covered the bill (the app user)
 
-  /// person name -> amount they owe
   final Map<String, double> shares;
 
-  /// person name -> has paid their share back
   final Map<String, bool> paid;
 
-  /// kept so a split can be edited later exactly as it was entered
   final List<SplitItem> items;
   final Map<String, int> days;
 
@@ -244,8 +237,6 @@ String shortDate(DateTime d) =>
     '${monthNames[d.month - 1].substring(0, 3)} ${d.day}, ${d.year}';
 
 // ---------- MONEY MATH ----------
-/// Splits [totalCents] by [weights] with no cents lost
-/// (largest-remainder method). e.g. 190000 / 3 -> 63333, 63333, 63334.
 List<int> allocate(int totalCents, List<num> weights) {
   final sum = weights.fold<num>(0, (a, b) => a + b);
   if (weights.isEmpty || sum <= 0) return List.filled(weights.length, 0);
