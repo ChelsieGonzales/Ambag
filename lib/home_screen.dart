@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'main.dart'; // colors + BrandLogo
+import 'main.dart';
 import 'data_service.dart';
 import 'models.dart';
 import 'new_split_screen.dart';
@@ -19,7 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int tab = 0;
 
-  // Live data from Firestore (a new user starts with nothing).
+  // Live data from Firestore
   List<Friend> friends = [];
   List<SplitRecord> records = [];
   final Set<String> selected = {};
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  /// Runs a Firestore write without blocking the UI (works offline too).
+  /// Runs a Firestore write without blocking the UI
   void _run(Future<void> Function() action) {
     action().catchError((Object e) {
       if (!mounted) return;
@@ -109,7 +109,6 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  /// Opens a saved split: paid toggles, edit, delete.
   void _viewSplit(SplitRecord r) {
     final id = r.id;
     showBreakdownSheet(
