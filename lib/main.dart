@@ -257,7 +257,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
                     const SizedBox(height: 30),
 
-                    // NAME FIELD - SIGN UP ONLY
+                    // SIGN UP
                     if (!isLogin) ...[
                       fieldLabel('What should we call you?'),
 
