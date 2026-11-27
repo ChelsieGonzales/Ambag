@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'data_service.dart';
-import 'main.dart'; // forestGreen, sageGreen, darkText
+import 'main.dart';
 import 'models.dart';
 
 class ProfileTab extends StatefulWidget {
@@ -188,7 +188,6 @@ class _ProfileTabState extends State<ProfileTab> {
     ),
   );
 
-  /// Add a new payment account, or edit [existing].
   Future<void> _editAccount([PaymentAccount? existing]) async {
     var method = existing?.method ?? 'GCash';
     String? formError;
@@ -455,7 +454,7 @@ class _ProfileTabState extends State<ProfileTab> {
       );
       await user.reauthenticateWithCredential(cred);
       await DataService.deleteAllData();
-      await user.delete(); // AuthGate sends the user back to the login screen
+      await user.delete(); // sends the user back to the login screen
     } on FirebaseAuthException catch (e) {
       _snack(
         e.code == 'wrong-password' || e.code == 'invalid-credential'
