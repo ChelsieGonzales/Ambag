@@ -96,13 +96,13 @@ Ambag/
 
 External libraries and online references used in this project:
 
-# Courses
+### Courses
 
 Coursera: Build Interactive Flutter Apps with Practical UI Design
 
 Coursera: Getting Started with Dart and Flutter
 
-# Documentation and tutorials
+### Documentation and tutorials
 
 Firebase: Get started with Firebase Authentication on Flutter - https://firebase.google.com/docs/auth/flutter/start 
 
@@ -110,12 +110,12 @@ GeeksforGeeks: Advanced Calculator App using Flutter - https://www.geeksforgeeks
 
 GeeksforGeeks: Google Sign In With Firebase in Flutter Web - https://www.geeksforgeeks.org/flutter/google-sign-in-with-firebase-in-flutter-web/ 
 
-# Libraries
+### Libraries
 
 Flutter and Dart, by Google
 
 firebase_core, firebase_auth, and cloud_firestore, by the FlutterFire team
 
-# AI assistance
+### AI assistance
 
 Claude, an AI assistant by Anthropic, was used for code suggestions and review. All code was made, reviewed, tested, and integrated by the project author.
