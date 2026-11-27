@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'main.dart'; // forestGreen, sageGreen, darkText
+import 'main.dart';
 import 'models.dart';
 
 class NewSplitScreen extends StatefulWidget {
@@ -9,7 +9,6 @@ class NewSplitScreen extends StatefulWidget {
   final List<String> friends;
   final List<String> preselected;
 
-  /// When set, the screen edits this split instead of creating a new one.
   final SplitRecord? editing;
 
   const NewSplitScreen({
@@ -70,7 +69,6 @@ class _NewSplitScreenState extends State<NewSplitScreen> {
   }
 
   // ---------- STATE HELPERS ----------
-  /// The person who covered the bill (stays the same even if you rename yourself).
   String get _me {
     final e = widget.editing;
     return (e != null && e.paidBy.isNotEmpty) ? e.paidBy : widget.myName;
@@ -187,7 +185,7 @@ class _NewSplitScreenState extends State<NewSplitScreen> {
       type: type,
       paidBy: paidBy,
       shares: {for (final e in cents.entries) e.key: e.value / 100},
-      // keep earlier paid marks; the person who covered the bill is always paid
+      // the person who covered the bill is always paid
       paid: {
         for (final p in cents.keys)
           p: p == paidBy ? true : (old?.paid[p] ?? false),
@@ -918,8 +916,6 @@ class _NewSplitScreenState extends State<NewSplitScreen> {
 }
 
 // ---------- BREAKDOWN SHEET ----------
-// Preview mode (canSave: true): shows amounts + a Save button.
-// View mode: shows paid/unpaid toggles plus Edit and Delete.
 Future<bool?> showBreakdownSheet(
   BuildContext context,
   SplitRecord r, {
